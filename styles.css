@@ -116,6 +116,7 @@
     svg {
         display: block;
         max-width: 100%;
+        height: auto;
     }
 
     .wrapper {
@@ -128,13 +129,39 @@
     .topnav {
         background-color: var(--color-header-bg);
 
-        .topnav__homelink {
+        .topnav__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: 12px;
+
+            @media (width >= calc(600 / 16 * 1rem)) {
+                padding-block: 20px;
+            }
         }
+
+        .topnav__homelink {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
         .topnav__logo {
+            width: calc(70 / 16 * 1rem);
+
+            @media (width >= calc(600 / 16 * 1rem)) {
+                width: calc(128 / 16 * 1rem);
+            }
         }
         .topnav__links {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            gap: 20px;
+
+            @media (width >= calc(600 / 16 * 1rem)) {
+                gap: 40px;
+            }
         }
         .topnav__item {
         }
@@ -144,6 +171,11 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+
+            &:hover {
+                text-decoration: underline 2px;
+                text-underline-offset: 4px;
+
         }
     }
 }
